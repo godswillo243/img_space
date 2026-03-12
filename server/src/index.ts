@@ -17,7 +17,7 @@ const clientUrl = getEnv("CLIENT_URL");
 app.use(
   cors({
     origin: clientUrl ? [clientUrl] : "*",
-    credentials: !clientUrl,
+    credentials: !!clientUrl,
   }),
 );
 
