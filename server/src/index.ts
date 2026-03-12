@@ -17,11 +17,10 @@ const clientUrl = getEnv("CLIENT_URL");
 app.use(
   cors({
     origin: clientUrl ? [clientUrl] : "*",
-    credentials: true,
+    credentials: !clientUrl,
   }),
 );
 
-app.options("*", cors());
 app.use(morgan("dev"));
 app.use(helmet({}));
 app.use(express.json());
