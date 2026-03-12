@@ -13,7 +13,7 @@ import EventEmitter from "events";
 
 const app = express();
 
-app.use(cors({ origin: getEnv("CLIENT_URL"), credentials: true }));
+app.use(cors({ origin: getEnv("CLIENT_URL") || "*" }));
 app.use(morgan("dev"));
 app.use(helmet({}));
 app.use(express.json());
