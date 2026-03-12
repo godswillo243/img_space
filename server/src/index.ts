@@ -10,7 +10,7 @@ import morgan from "morgan";
 
 const app = express();
 const clientUrl = getEnv("CLIENT_URL");
-
+console.log("clientUrl: ", clientUrl);
 app.use(
   cors({
     origin: clientUrl ? [clientUrl] : "*",
